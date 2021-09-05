@@ -1,0 +1,52 @@
+package sorting;
+
+public class MergeSort {
+
+	public static void sort(int num[]) {
+		int low = 0;
+		int high = num.length - 1;
+		mergeSort(num, low, high);
+	}
+
+	private static void mergeSort(int num[], int low, int high) {
+		if (low < high) {
+			int mid = (low + high) / 2;
+			mergeSort(num, low, mid);
+			mergeSort(num, mid + 1, high);
+			merge(num, low, mid, high);
+		}
+	}
+
+	private static void merge(int num[], int low, int mid, int high) {
+		int l = mid - low + 1;
+		int r = high - mid;
+		int i, j, k;
+		int L[] = new int[l];
+		int R[] = new int[r];
+
+		for (i = 0; i < l; ++i)
+			L[i] = num[low + i];
+
+		for (j = 0; j < R.length; j++) {
+			R[j] = num[mid + 1 + j];
+		}
+
+		i = 0;
+		j = 0;
+		k = low;
+
+		while (i < l && j < r) {
+			if (L[i] <= R[j]) {
+				num[k++] = L[i++];
+			} else {
+				num[k++] = R[j++];
+			}
+		}
+		while (i < l) {
+			num[k++] = L[i++];
+		}
+		while (j < r) {
+			num[k++] = R[j++];
+		}
+	}
+}
