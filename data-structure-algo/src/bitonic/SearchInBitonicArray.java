@@ -1,6 +1,9 @@
 package bitonic;
 
+import java.util.*;
+
 public class SearchInBitonicArray {
+	
 
 	public static int getMaxEleIndex(int num[]) {
 		int start = 0;
@@ -21,7 +24,6 @@ public class SearchInBitonicArray {
 	}
 
 	public static int seacrhVal(int num[], int val) {
-
 		int start = 0;
 		int end = num.length - 1;
 		int maxIndex = getMaxEleIndex(num);

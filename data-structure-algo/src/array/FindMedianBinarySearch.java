@@ -2,8 +2,8 @@ package array;
 
 public class FindMedianBinarySearch {
 	public static void main(String[] args) {
-		int[] nums1 = { 1 };
-		int[] nums2 = { 1 };
+		int nums1[] = { 4, 6, 9, 10 };
+		int nums2[] = { 1, 2, 3, 5, 7, 8, 34 };
 		System.out.println(findMedianSortedArrays(nums1, nums2));
 	}
 	public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
