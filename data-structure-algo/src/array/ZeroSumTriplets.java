@@ -4,7 +4,7 @@ import java.util.*;
 
 public class ZeroSumTriplets {
 
-	public static List<List<Integer>> zeroSum(int num[], List<List<Integer>> output) {
+	public static List<List<Integer>> zeroSum(int num[], Set<List<Integer>> output) {
 		Arrays.sort(num);
 		int result[] = new int[3];
 		int start;
@@ -37,12 +37,15 @@ public class ZeroSumTriplets {
 			}
 		}
 		// return result;
-		return output;
+		List<List<Integer>> res = new ArrayList<>();
+		res.addAll(output);
+		return res;
 	}
 
 	public static void main(String[] args) {
-		int num[] = { 2, 7, 3, 5, -5, 8, -4, 1, 0 };
-		List<List<Integer>> output = new ArrayList<>();
+		//int num[] = { 2, 7, 3, 5, -5, 8, -4, 1, 0 };
+		int num[] = { -1, 0, 1, 2, -1, -4 };
+		Set<List<Integer>> output = new HashSet<>();
 //		System.out.println(Arrays.toString(zeroSum(num, output)));
 		System.out.println(zeroSum(num, output));
 	}
