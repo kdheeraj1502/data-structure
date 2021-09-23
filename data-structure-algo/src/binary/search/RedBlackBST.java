@@ -1,4 +1,4 @@
-package binary.tree;
+package binary.search;
 
 import java.util.NoSuchElementException;
 import java.util.PriorityQueue;

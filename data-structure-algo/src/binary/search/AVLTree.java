@@ -1,4 +1,4 @@
-package binary.tree;
+package binary.search;
 
 public class AVLTree {
 
