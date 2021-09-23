@@ -9,7 +9,6 @@ public class InOrderTraversal {
 			inOrder(root.left);
 			System.out.print(root.val + ", ");
 			inOrder(root.right);
-			System.out.println("");
 		}
 	}
 
