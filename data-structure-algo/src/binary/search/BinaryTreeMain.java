@@ -13,8 +13,6 @@ public class BinaryTreeMain {
 		LevelOrderTraversal.levelOrderTopToDown(node);
 		System.out.println("--------Level Order Down To Top---------");
 		// LevelOrderTraversal.levelOrderDownToTop(node);
-		System.out.println("--------In Order With Recursion---------");
-		// InOrderTraversal.inOrder(node);
 		System.out.println("--------In Order WithOut Recursion---------");
 		// InOrderTraversal.inOrderWithOutRecursion(node);
 		System.out.println("---------Level Order Top To Down Line By Line---------");
@@ -54,6 +52,24 @@ public class BinaryTreeMain {
 		System.out.println("--------Copy Minor Tree---------------------");
 		Node copyMinor = CopyMinorTree.copyMinorTree(node);
 		LevelOrderTraversal.levelOrderTopToDown(copyMinor);
+		System.out.println("--------Is Complete Tree---------------------");
+		System.out.println(IsCompleteTree.isCompleteTree(node));
+		System.out.println("--------Pre Order With Recursion---------");
+		PreOrderTraversal.preOrder(node);
+		System.out.println();
+		System.out.println("--------Pre Order Without Recursion---------");
+		PreOrderTraversal.preOrderIterative(node);
+		System.out.println();
+		System.out.println("--------In Order With Recursion---------");
+		InOrderTraversal.inOrder(node);
+		System.out.println("--------In Order WithOut Recursion---------");
+		InOrderTraversal.inOrder_self(node);
+		System.out.println();
+		System.out.println("--------Post Order With Recursion---------");
+		PostOrderTraversal.postOrder(node);
+		System.out.println();
+		System.out.println("--------Post Order Without Recursion---------");
+		PostOrderTraversal.postOrderWithoutRecursion(node);
 	}
 
 }

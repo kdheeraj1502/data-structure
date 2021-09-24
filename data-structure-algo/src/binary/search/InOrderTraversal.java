@@ -25,4 +25,24 @@ public class InOrderTraversal {
 			temp = temp.right;
 		}
 	}
+
+	public static void inOrder_self(Node root) {
+		Node temp;
+		Stack<Node> stack = new Stack<>();
+		stack.push(root);
+		while (!stack.isEmpty()) {
+			temp = stack.peek();
+			while (temp != null) {
+				temp = temp.left;
+				if(temp != null)
+					stack.push(temp);
+			}
+			temp = stack.pop();
+			System.out.print(temp.val + ", ");
+			temp = stack.pop();
+			System.out.print(temp.val + ", ");
+			if (temp.right != null)
+				stack.push(temp.right);
+		}
+	}
 }
