@@ -15,12 +15,12 @@ public class Node {
 		return "Node [val=" + val + ", left=" + left + ", right=" + right + "]";
 	}
 
-	Node(int val) {
+	public Node(int val) {
 		this.val = val;
 		this.left = this.right = null;
 	}
 
-	Node(int val, Node left, Node right) {
+	public Node(int val, Node left, Node right) {
 		this.val = val;
 		this.left = left;
 		this.right = right;

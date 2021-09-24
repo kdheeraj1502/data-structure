@@ -6,6 +6,23 @@ import java.util.Stack;
 
 public class LevelOrderTraversal {
 
+	public static void levelOrder(Node root) {
+		Queue<Node> que = new ArrayDeque<>();
+		Node temp = null;
+		if (root != null)
+			que.add(root);
+		while (!que.isEmpty()) {
+			if (!que.isEmpty())
+				temp = que.remove();
+			System.out.print(" " + temp.val);
+			if (temp.left != null)
+				que.add(temp.left);
+			if (temp.right != null)
+				que.add(temp.right);
+		}
+		System.out.println();
+	}
+
 	public static void levelOrderTopToDown(Node root) {
 		Queue<Node> que = new ArrayDeque<>();
 		Node temp = null;
@@ -90,7 +107,7 @@ public class LevelOrderTraversal {
 					j--;
 				}
 			}
-			
+
 			while (!stack.isEmpty()) {
 				int val = stack.pop().val;
 				if (val == Integer.MIN_VALUE) {
@@ -109,5 +126,27 @@ public class LevelOrderTraversal {
 		 * 
 		 * }
 		 */
+	}
+
+	public static void printCurrentLevel(Node root) {
+		int h = getHeight(root);
+		for(int i = 1; i <= h; i++) {
+			printCurrentLevel(root, i);
+		}
+	}
+	
+	public static void printCurrentLevel(Node root, int level) {
+		if(root == null)return;
+		if(level == 1) {
+			System.out.print(root.val + ", ");
+		}
+		else if(level > 1) {
+			printCurrentLevel(root.left, level - 1);
+			printCurrentLevel(root.right, level - 1);
+		}
+	}
+
+	public static int getHeight(Node root) {
+		return root != null ? Math.max(getHeight(root.left), getHeight(root.right)) + 1 : 0;
 	}
 }
