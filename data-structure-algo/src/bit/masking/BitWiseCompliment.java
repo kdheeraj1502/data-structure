@@ -1,3 +1,4 @@
+package bit.masking;
 
 public class BitWiseCompliment {
 
