@@ -8,7 +8,7 @@ public class MinHeap {
 		int size; // Current number of elements in min heap
 
 		private Heap(int num[], int size) {
-			size = size;
+			this.size = size;
 			this.num = num; // store address of array
 			int i = (size - 1) / 2;
 			while (i >= 0) {
@@ -73,7 +73,7 @@ public class MinHeap {
 	public static void main(String[] args) {
 		// int num[] = { 12, 3, 5, 7, 19 };
 		int num[] = { 73, 188, 894, 915, 940, 616, 900, 548 };
-		System.out.println(kthSmallest(num, 7));
+		System.out.println("ans " + kthSmallest(num, 7));
 		for (int i = 1; i <= num.length; i++) {
 		///	System.out.println(kthSmallest(num, i));
 		}

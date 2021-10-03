@@ -45,10 +45,10 @@ public class BuildMinHeap {
 		int r = right(i);
 		int smallest = i;
 
-		if (l < num.length && num[l] < num[i]) {
+		if (l < size && num[l] < num[i]) {
 			smallest = l;
 		}
-		if (r < num.length && num[r] < num[i]) {
+		if (r < size && num[r] < num[i]) {
 			smallest = r;
 		}
 		if (smallest != i) {
@@ -87,7 +87,7 @@ public class BuildMinHeap {
 
 	public static int kthSmallest(int num[], int k) {
 		for (int i = 0; i < k - 1; i++) {
-			 System.out.println(extractMin());
+			 System.out.println(" extractMin " + extractMin());
 			//extractMin();
 		}
 		return extractMin();
@@ -104,7 +104,7 @@ public class BuildMinHeap {
 			minHeap.insert(in);
 		}
 	//	print();
-		System.out.println(kthSmallest(num, 7));
+		System.out.println("ans " + kthSmallest(num, 7));
 		// System.out.println("The min val is " + minHeap.extractMin());
 
 	}
