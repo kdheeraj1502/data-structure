@@ -42,6 +42,7 @@ public class Divide2Integers {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("output :: " + divide_self(-9, 3));
+		int a = -2147483648, b = -1;
+		System.out.println("output :: " + divide_self(a, b));
 	}
 }

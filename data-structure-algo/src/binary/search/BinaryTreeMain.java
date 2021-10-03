@@ -11,8 +11,8 @@ public class BinaryTreeMain {
 		Node node = CompleteBinaryTree.getRoot();
 		System.out.println("--------Level Order Top To Down---------");
 		LevelOrderTraversal.levelOrderTopToDown(node);
-		//LevelOrderTraversal.levelOrder(node);
-		//LevelOrderTraversal.printCurrentLevel(node);
+		// LevelOrderTraversal.levelOrder(node);
+		// LevelOrderTraversal.printCurrentLevel(node);
 		System.out.println();
 		int depth = TreeDepth.treeDepthWithoutRecursion(node);
 		System.out.println("depth is " + depth);
@@ -52,9 +52,9 @@ public class BinaryTreeMain {
 		// CompleteBinaryTree.levelOrderBinaryTree(num);
 		// Node node2 = CompleteBinaryTree.getRoot();
 		// System.out.println(IdenticalBinaryTree.isEquals(node, node2));
-		// System.out.println("--------Copy Tree---------------------");
-		// Node copy = CopyTree.copyTree(node);
-		// LevelOrderTraversal.levelOrderTopToDown(copy);
+		System.out.println("--------Copy Tree---------------------");
+		Node copy = CopyTree.copyTree(node);
+		LevelOrderTraversal.levelOrderTopToDown(copy);
 		// System.out.println("--------Copy Minor Tree---------------------");
 		// Node copyMinor = CopyMinorTree.copyMinorTree(node);
 		// LevelOrderTraversal.levelOrderTopToDown(copyMinor);
@@ -120,10 +120,10 @@ public class BinaryTreeMain {
 		System.out.print(FLoorBST.floorBST(tree, 16) + ", ");
 		System.out.println();
 		System.out.println("--------Trim outside range---------");
-		Node tree3 = TrimOutSodeRange.tripOutsideRange(tree, 19,  27);
+		Node tree3 = TrimOutSodeRange.tripOutsideRange(tree, 19, 27);
 		LevelOrderTraversal.levelOrderTopToDown(tree3);
 		System.out.println("--------Print in range Nodes---------");
 		PrintTreeNodesOfRange.print(tree, 19, 27);
-		}
+	}
 
 }
