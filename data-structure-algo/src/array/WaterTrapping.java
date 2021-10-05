@@ -4,6 +4,7 @@ import java.util.Stack;
 
 public class WaterTrapping {
 
+	// Not worked
 	public static int trap_book(int[] num) {
 		int water = 0;
 		int leftHeight[] = new int[num.length];

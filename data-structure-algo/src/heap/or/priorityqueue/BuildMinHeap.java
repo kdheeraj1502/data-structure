@@ -45,10 +45,10 @@ public class BuildMinHeap {
 		int r = right(i);
 		int smallest = i;
 
-		if (l < size && num[l] < num[i]) {
+		if (l < size && num[l] < num[smallest]) {
 			smallest = l;
 		}
-		if (r < size && num[r] < num[i]) {
+		if (r < size && num[r] < num[smallest]) {
 			smallest = r;
 		}
 		if (smallest != i) {
