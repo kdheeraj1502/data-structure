@@ -11,6 +11,7 @@ public class TrieAutoComplete {
 	}
 
 	public void insert(String key, int value) {
+		key = key.toLowerCase();
 		Node temp = this.root;
 		Map<Character, Node> children = temp.getChildren();
 		for (int i = 0; i < key.length(); i++) {
@@ -91,10 +92,12 @@ public class TrieAutoComplete {
 		String d = "bee";
 		String e = "banana";
 		String f = "bus";
+		String h = "AAPan";
 
 		tac.insert(g, 76);
 		tac.insert(a, 10);
 		tac.insert(b, 7);
+		tac.insert(h, 11);
 		tac.insert(c, 5);
 		tac.insert(d, 15);
 		tac.insert(e, 134);
