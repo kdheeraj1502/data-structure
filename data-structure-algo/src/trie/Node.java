@@ -10,11 +10,22 @@ public class Node {
 	private boolean isVisited;
 	private int value;
 	private Map<Character, Node> children;
+	private List<Node> kids;
 
 	public Node(String character) {
 		this.character = character;
-		this.child = new Node[Contstants.ALPHABET_SIZE];
+		// this.child = new Node[Contstants.ALPHABET_SIZE];
+		this.child = new Node[Contstants.CHARACTER_SIZE];
 		this.children = new HashMap<>();
+		this.kids = new ArrayList<>();
+	}
+
+	public List<Node> getKids() {
+		return kids;
+	}
+
+	public void setKids(List<Node> kids) {
+		this.kids = kids;
 	}
 
 	public Map<Character, Node> getChildren() {

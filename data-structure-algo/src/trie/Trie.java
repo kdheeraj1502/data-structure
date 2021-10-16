@@ -87,13 +87,13 @@ public class Trie {
 			}
 		}
 	}
-
+	
 	public static void main(String[] args) {
 		Trie t = new Trie();
-		String a = "air";
+		String a = "apir";
 		String b = "apple";
 		String c = "approve";
-		String d = "bee";
+		String d = "apee";
 
 		/*
 		 * t.add(a); t.add(d); System.out.println(t.find(a)); t.remove(a); t.remove(d);
@@ -106,6 +106,6 @@ public class Trie {
 		t.insert(c);
 		t.insert(d);
 		
-		t.print(t.root);
+		//t.print(t.root);
 	}
 }

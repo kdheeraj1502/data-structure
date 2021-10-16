@@ -1,13 +1,15 @@
 package trie;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
-public class TrieAutoComplete {
+public class TrieLongestCommonPrefix {
 
 	private Node root;
 	private static int lcpIndex;
 
-	public TrieAutoComplete() {
+	public TrieLongestCommonPrefix() {
 		this.root = new Node("");
 	}
 
@@ -110,14 +112,14 @@ public class TrieAutoComplete {
 
 	public static void main(String[] args) {
 		TrieAutoComplete tac = new TrieAutoComplete();
-	//	String a = "ampuir";
-	//	String b = "apuple";
-	//	String c = "apuprove";
-		 String g = "baus";
-		 String d = "baus";
-		 String e = "baus";
-		 String f = "baus";
-	//	String h = "apuAAPan";
+		// String a = "ampuir";
+		// String b = "apuple";
+		// String c = "apuprove";
+		String g = "baus";
+		String d = "baus";
+		String e = "baus";
+		String f = "baus";
+		// String h = "apuAAPan";
 
 		tac.insert(g, 76);
 //		tac.insert(a, 10);

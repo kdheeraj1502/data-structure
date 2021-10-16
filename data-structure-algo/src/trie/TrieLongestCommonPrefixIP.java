@@ -1,24 +1,27 @@
 package trie;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
-public class TrieAutoComplete {
+public class TrieLongestCommonPrefixIP {
+
 
 	private Node root;
 	private static int lcpIndex;
 
-	public TrieAutoComplete() {
+	public TrieLongestCommonPrefixIP() {
 		this.root = new Node("");
 	}
 
-	public void insert(String key, int value) {
+	public void insert(String key) {
 		key = key.toLowerCase();
 		Node temp = this.root;
 		Map<Character, Node> children = temp.getChildren();
 		List<Node> kids = temp.getKids();
 		for (int i = 0; i < key.length(); i++) {
 			char ch = key.charAt(i);
-			int ascii = ch - 'a';
+			int ascii = ch;
 			if (temp.getChild(ascii) == null) {
 				Node node = new Node(String.valueOf(ch));
 				temp.setChild(ascii, node);
@@ -32,24 +35,23 @@ public class TrieAutoComplete {
 			kids = temp.getKids();
 		}
 		temp.setLeaf(Boolean.TRUE);
-		temp.setValue(value);
 	}
 
-	public Integer search(String key) {
+	public boolean search(String key) {
 		Node temp = this.root;
 		for (int i = 0; i < key.length(); i++) {
 			char ch = key.charAt(i);
-			int ascii = ch - 'a';
+			int ascii = ch;
 			if (temp.getChild(ascii) == null) {
-				return null;
+				return false;
 			} else {
 				temp = temp.getChild(ascii);
 			}
 		}
 		if (!temp.isLeaf())
-			return null;
+			return false;
 		else
-			return temp.getValue();
+			return temp.isLeaf();
 	}
 
 	public List<String> autoComplete(String prefix) {
@@ -57,7 +59,7 @@ public class TrieAutoComplete {
 		List<String> autoCompleteList = new ArrayList<>();
 		for (int i = 0; i < prefix.length(); i++) {
 			char ch = prefix.charAt(i);
-			int ascii = ch - 'a';
+			int ascii = ch;
 			if (temp.getChild(ascii) == null) {
 				return autoCompleteList;
 			} else {
@@ -109,40 +111,24 @@ public class TrieAutoComplete {
 	}
 
 	public static void main(String[] args) {
-		TrieAutoComplete tac = new TrieAutoComplete();
-	//	String a = "ampuir";
-	//	String b = "apuple";
-	//	String c = "apuprove";
-		 String g = "baus";
-		 String d = "baus";
-		 String e = "baus";
-		 String f = "baus";
-	//	String h = "apuAAPan";
+		TrieLongestCommonPrefixIP tlcp = new TrieLongestCommonPrefixIP();
+		tlcp.insert("243.189.345.123");
+		tlcp.insert("243.189.562.173");
+		tlcp.insert("243.145.111.173");
+		tlcp.insert("243.189.123.763");
+		tlcp.insert("243.189.345.223");
 
-		tac.insert(g, 76);
-//		tac.insert(a, 10);
-//		tac.insert(b, 7);
-//		tac.insert(h, 11);
-//		tac.insert(c, 5);
-		tac.insert(d, 15);
-		tac.insert(e, 134);
-		tac.insert(f, 1);
+		// found
+		System.out.println("243.189.562.173 is " + ((tlcp.search("243.189.562.173") == true) ? "present" : "Not found"));
+		// Not found
+		System.out.println("999.189.345.123 is " + ((tlcp.search("999.189.345.123") == true) ? "present" : "Not found"));
+		// found
+		System.out.println("243.189.345.123 is " + ((tlcp.search("243.189.345.123") == true) ? "present" : "Not found"));
+		// Not found
+		System.out.println("air is " + ((tlcp.search("air") == true) ? "present" : "Not found"));
 
-		System.out.println(tac.search("air"));
-		System.out.println(tac.search("computer"));
-		System.out.println(tac.search("bee"));
-		System.out.println(tac.search("air"));
-
-		// System.out.println(tac.root.getChildren());
-
-		for (String s : tac.autoComplete("b")) {
-			System.out.println(s);
-		}
-		System.out.println("------------------");
-		for (String s : tac.sort()) {
-			System.out.println(s);
-		}
 		System.out.println("---------Longest common prefix-----------");
-		System.out.println(tac.longestCommonPrefix());
+		System.out.println(tlcp.longestCommonPrefix());
 	}
+
 }
