@@ -4,6 +4,7 @@ import java.util.*;
 
 public class LongestSubStringWithoutRepeat {
 
+	//"dvdf"
 	public static int lengthOfLongestSubstring(String s) {
 		int winStart = 0;
 		int winEnd = 0;
@@ -24,17 +25,17 @@ public class LongestSubStringWithoutRepeat {
 
 	public static int longestUniqueSubsttr(String str) {
 		int n = str.length();
-		int res = 0;
+		int len = 0;
 		int[] lastIndex = new int[NO_OF_CHARS];
 		Arrays.fill(lastIndex, -1);
 		int start = 0;
 		for (int end = 0; end < n; end++) {
 			// index plus 1
 			start = Math.max(start, lastIndex[str.charAt(end)] + 1);
-			res = Math.max(res, end - start + 1);
+			len = Math.max(len, end - start + 1);
 			lastIndex[str.charAt(end)] = end;
 		}
-		return res;
+		return len;
 	}
 
 	public static void main(String[] args) {
@@ -46,6 +47,12 @@ public class LongestSubStringWithoutRepeat {
 		//System.out.println(Arrays.toString(lastIndex));
 		// System.out.println(lengthOfLongestSubstring(s));
 		System.out.println(longestUniqueSubsttr(s));
-
+		char c = 'm';
+		String str = "Dheeraj";
+		str = str.toLowerCase();
+		System.out.println(str);
+		if(c > '9' || c < '0' && (c < 'a' && c > 'z')) {
+				System.out.println(true);
+			}
 	}
 }
