@@ -1,6 +1,6 @@
 package linked.list.doubly;
 
-public class LinkedList {
+public class DoubleLinkedList {
 
 	private Node head;
 	private Node tail;
@@ -45,6 +45,18 @@ public class LinkedList {
 			head.prev = node;
 			node.next = head;
 			head = node;
+		}
+		size++;
+	}
+	
+	public void addBack(int val) {
+		Node node = new Node(val, null, null);
+		if (size == 0) {
+			tail = head = node;
+		} else {
+			tail.next = node;
+			node.prev = tail;
+			tail = node;
 		}
 		size++;
 	}

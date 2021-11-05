@@ -4,39 +4,73 @@ import java.util.*;
 
 public class RottenFruitProblem {
 
-	public int orangesRotting(int[][] grid) {
-		int R = grid.length;
-		int C = grid[0].length;
-		// boolean[][] visited = new boolean[R][C];
-		Queue<O> q = new ArrayDeque<>();
-		for (int i = 0; i < R; i++) {
-			for (int j = 0; j < C; j++) {
-				if (grid[i][j] == 2) {
-					q.add(new O(i, j, 0));
+	public int rottenFruit(int[][] num) {
+
+		Queue<Pair> queue = new ArrayDeque<>();
+		for (int i = 0; i < num.length; i++) {
+			for (int j = 0; j < num[i].length; j++) {
+				if (num[i][j] == 2) {
+					queue.add(new Pair(i, j, 0));
 				}
 			}
 		}
 
-		int res = 0;
+		int days = 0;
 
-		while (!q.isEmpty()) {
-			O cur = q.poll();
+		while (!queue.isEmpty()) {
+			Pair curr = queue.poll();
+			days = Math.max(days, curr.days);
+			for (int k = 0; k < x.length; k++) {
+				int row = curr.x + x[k];
+				int col = curr.y + y[k];
+				if (isValid(num, row, col) && num[row][col] == 1) {
+					queue.add(new Pair(row, col, curr.days + 1));
+					num[row][col] = 2;
+				}
+			}
+		}
 
-			res = Math.max(res, cur.layer);
+		for(int i = 0; i < num.length; i++) {
+			for(int j = 0; j < num[i].length; j++) {
+				if(num[i][j] == 1)
+					return -1;
+			}
+		}
+		
+		return days;
+
+	}
+
+	public int orangesRotting(int[][] grid) {
+		int R = grid.length;
+		int C = grid[0].length;
+		// boolean[][] visited = new boolean[R][C];
+		Queue<Pair> queue = new ArrayDeque<>();
+		for (int i = 0; i < R; i++) {
+			for (int j = 0; j < C; j++) {
+				if (grid[i][j] == 2) {
+					queue.add(new Pair(i, j, 0));
+				}
+			}
+		}
+
+		int days = 0;
+
+		while (!queue.isEmpty()) {
+			Pair cur = queue.poll();
+
+			days = Math.max(days, cur.days);
 
 			for (int k = 0; k < x.length; k++) {
 				int ro = cur.x + x[k];
 				int co = cur.y + y[k];
 
-				if (inside(grid, ro, co) && grid[ro][co] == 1) {
-					q.add(new O(ro, co, cur.layer + 1));
+				if (isValid(grid, ro, co) && grid[ro][co] == 1) {
+					queue.add(new Pair(ro, co, cur.days + 1));
 					grid[ro][co] = 2;
 				}
-
 			}
-
 		}
-
 		for (int i = 0; i < R; i++) {
 			for (int j = 0; j < C; j++) {
 				if (grid[i][j] == 1) {
@@ -44,14 +78,13 @@ public class RottenFruitProblem {
 				}
 			}
 		}
-
-		return res;
+		return days;
 	}
 
 	int[] x = { 0, 0, -1, 1 };
 	int[] y = { -1, 1, 0, 0 };
 
-	public boolean inside(int[][] grid, int i, int j) {
+	public boolean isValid(int[][] grid, int i, int j) {
 		if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length)
 			return false;
 		return true;
@@ -60,17 +93,18 @@ public class RottenFruitProblem {
 	public static void main(String[] args) {
 		int num[][] = { { 1, 0, 1, 1, 0 }, { 2, 1, 0, 1, 0 }, { 0, 0, 0, 2, 1 }, { 0, 2, 0, 0, 1 }, { 1, 1, 0, 0, 1 } };
 		RottenFruitProblem rfp = new RottenFruitProblem();
+		System.out.println(rfp.rottenFruit(num));
 	}
 
-	class O {
+	class Pair {
 		int x;
 		int y;
-		int layer;
+		int days;
 
-		public O(int x, int y, int layer) {
+		public Pair(int x, int y, int days) {
 			this.x = x;
 			this.y = y;
-			this.layer = layer;
+			this.days = days;
 		}
 	}
 }

@@ -2,7 +2,7 @@ package linked.list.doubly;
 
 public class RemoveDuplicate {
 
-	public static void removeDuplicate(Node head, LinkedList list) {
+	public static void removeDuplicate(Node head, DoubleLinkedList list) {
 		Node curr = head;
 		while(curr != null) {
 			if(curr.next != null && curr.val == curr.next.val) {

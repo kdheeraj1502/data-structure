@@ -3,13 +3,28 @@ package linked.list.doubly;
 public class Main {
 
 	public static void main(String[] args) {
-		LinkedList list = new LinkedList();
+		DoubleLinkedList list = new DoubleLinkedList();
 		list.addHead(32);
 		list.addHead(26);
 		list.addHead(17);
 		list.addHead(17);
 		list.addHead(13);
 		list.addHead(9);
+		
+		Node node = ReverseList.reverse(list.getHead());
+		
+		while(node != null) {
+			System.out.print(node.val + ", ");
+			node = node.next;
+		}
+		
+		list.addBack(132);
+		list.addBack(126);
+		list.addBack(117);
+		list.addBack(117);
+		list.addBack(113);
+		list.addBack(19);
+		
 		System.out.print("list of val in head : ");
 		list.print(list.getHead());
 		System.out.println();

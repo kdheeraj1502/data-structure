@@ -4,7 +4,7 @@ public class CircularLinkedList {
 
 	static int count = 0;
 
-	public static void addTail(int val, LinkedList list) {
+	public static void addTail(int val, DoubleLinkedList list) {
 		Node node = new Node(val, null, null);
 		if (list.getHead() == null) {
 			list.setTail(node);
@@ -18,7 +18,7 @@ public class CircularLinkedList {
 		}
 	}
 
-	public static void addHead(int val, LinkedList list) {
+	public static void addHead(int val, DoubleLinkedList list) {
 		Node node = new Node(val, null, null);
 		if (list.getHead() == null) {
 			list.setHead(node);
@@ -32,7 +32,7 @@ public class CircularLinkedList {
 		}
 	}
 
-	public static int remove(LinkedList list) {
+	public static int remove(DoubleLinkedList list) {
 		int val = list.getTail().next.val;
 		if (list.getTail() == list.getTail().next) {
 			list.getTail().next = null;
@@ -43,7 +43,7 @@ public class CircularLinkedList {
 		return val;
 	}
 
-	public static void removeNode(LinkedList list, int val, int size) {
+	public static void removeNode(DoubleLinkedList list, int val, int size) {
 		if (list.getTail() == list.getTail().next) {
 			if (list.getTail().val == val) {
 				list.setTail(null);
@@ -62,7 +62,7 @@ public class CircularLinkedList {
 		}
 	}
 
-	public static void removeNodeWithoutSize(LinkedList list, int val) {
+	public static void removeNodeWithoutSize(DoubleLinkedList list, int val) {
 		if (list.getTail() == list.getTail().next) {
 			if (list.getTail().val == val) {
 				list.setTail(null);
@@ -73,7 +73,7 @@ public class CircularLinkedList {
 	}
 
 	public static void main(String[] args) {
-		LinkedList list = new LinkedList();
+		DoubleLinkedList list = new DoubleLinkedList();
 		/*
 		 * addTail(32, list); addTail(26, list); addTail(17, list); addTail(13, list);
 		 * addTail(9, list);
