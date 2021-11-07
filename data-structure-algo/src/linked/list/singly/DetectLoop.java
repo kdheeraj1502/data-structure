@@ -3,6 +3,18 @@ package linked.list.singly;
 import java.util.HashSet;
 
 public class DetectLoop {
+	
+    public boolean hasCycle(ListNode head) {
+        if(head == null) return false;
+        ListNode fast = head.next;
+        ListNode slow = head;
+        while(fast != null && fast.next != null){
+            if(fast == slow) return true;
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return false;
+    }
 
 	public static void detectLoop(Node node) {
 		HashSet<Node> set = new HashSet<>();

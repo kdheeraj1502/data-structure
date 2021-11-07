@@ -1,6 +1,19 @@
 package searching;
 
 public class DuplicateElement {
+	
+	public static int findRepeating(int num[]) {
+		boolean aux[] = new boolean[num.length];
+		int result = -1;
+		for(int i = 0; i < num.length; i++) {
+			if(aux[num[i]]) {
+				result = num[i];
+			} else {
+				aux[num[i]] = true;
+			}
+		}
+		return result;
+	}
 
 	public static void printRepeating(int num[]) {
 		int range = 100;

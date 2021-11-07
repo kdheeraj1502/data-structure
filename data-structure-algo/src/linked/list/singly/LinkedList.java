@@ -190,10 +190,13 @@ public class LinkedList {
 		}
 		curr.next = fourNode;
 		System.out.println();
+		
+		System.out.println("-------------Find loop--------------");
+		DetectLoop.detectLoop(instances.head);
+		System.out.println("-------------------");
 
 		Node node = DetectLoop.detectLoop_SPFP(instances.head);
 		RemoveLoop.removeLoop(node, instances.head);
 		print(instances.head);
-
 	}
 }

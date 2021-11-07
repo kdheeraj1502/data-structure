@@ -17,4 +17,9 @@ public class Node {
 		this.val = new Integer(val);
 		this.next = next;
 	}
+
+	@Override
+	public String toString() {
+		return "Node [val=" + val + "]";
+	}
 }
