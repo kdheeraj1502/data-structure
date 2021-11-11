@@ -24,7 +24,6 @@ public class FrogJumpMin {
 
 	public boolean canCross(int[] stones) {
 		Map<Integer, Set<Integer>> dp = new HashMap<>();
-
 		for (int val : stones)
 			dp.put(val, new HashSet<>());
 		dp.get(stones[0]).add(1);
@@ -45,7 +44,7 @@ public class FrogJumpMin {
 	public static void main(String[] args) {
 		int num[] = { 1, 3, 6, 3, 2, 3, 6, 8, 9, 5 };
 		FrogJumpMin fjm = new FrogJumpMin();
-		System.out.print("Minimum number of jumps to reach end is " + fjm.minJump(num));
+	//	System.out.print("Minimum number of jumps to reach end is " + fjm.minJump(num));
 		System.out.println();
 		System.out.print("Minimum number of jumps to reach end is " + fjm.canCross(num));
 	}

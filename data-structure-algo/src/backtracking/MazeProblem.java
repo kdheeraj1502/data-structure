@@ -2,8 +2,14 @@ package backtracking;
 
 public class MazeProblem {
 
+	// It is input 2 D array it consist of 0 and 1
+	// 0 is a wall and 1 is path
 	private int[][] mazeTable;
+	// it is a solution 2 D array to store the path 
+	// if path is not correct then back track
 	private int[][] solutionTable;
+	
+	// Its size of the maze or the input maze 2 D size
 	private int mazeSize;
 
 	public MazeProblem(int[][] mazeTable) {
@@ -12,7 +18,7 @@ public class MazeProblem {
 		this.solutionTable = new int[this.mazeSize][this.mazeSize];
 	}
 
-	private boolean solveMaze(int x, int y) {
+			private boolean solveMaze(int x, int y) {
 		if (x == mazeSize - 1 && y == mazeSize - 1) {
 			solutionTable[x][y] = 1;
 			return true;
@@ -44,6 +50,7 @@ public class MazeProblem {
 			return false;
 		if (y < 0 || y >= mazeSize)
 			return false;
+		// If not 1 
 		if (mazeTable[x][y] != 1)
 			return false;
 		if(solutionTable[x][y] == 1)

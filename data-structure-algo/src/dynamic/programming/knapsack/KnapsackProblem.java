@@ -51,10 +51,15 @@ public class KnapsackProblem {
 	}
 	
 	public static void main(String[] args) {
-		int numOfItems = 3;
-		int capacityOfKnapsack = 5;
-		int weights[] = { 4, 2, 3 };
-		int values[] = { 10, 4, 7 };
+		//int numOfItems = 3;
+	//	int capacityOfKnapsack = 5;
+	//	int weights[] = { 4, 2, 3 };
+	//	int values[] = { 10, 4, 7 };
+		
+		int numOfItems = 4;
+		int capacityOfKnapsack = 7;
+		int weights[] = { 1, 3, 4, 5 };
+		int values[] = { 1, 4, 5, 7 };
 		KnapsackProblem kp = new KnapsackProblem(numOfItems, capacityOfKnapsack, weights, values);
 		kp.solve();
 		kp.showResult();
