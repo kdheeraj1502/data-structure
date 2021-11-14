@@ -1,8 +1,8 @@
 package dynamic.programming;
 
 // Crossing 1 or 2 step and cost is getting added
-// we have to cross the intire array
-// cost  array is step cost, choose min cost array value, 
+// we have to cross the entire array
+// cost in array is a step cost, choose minmum cost array value, 
 // add them all and find the min cost to cross
 public class MinCostCLimbingStair {
 
