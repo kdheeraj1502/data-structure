@@ -1,8 +1,32 @@
 package binary.search;
 
-import java.util.Stack;
+import java.util.*;
 
 public class PostOrderTraversal {
+
+	public static List<Integer> postorderTraversal(Node root) {
+		List<Integer> result = new ArrayList<>();
+		if (root == null)
+			return result;
+		Stack<Integer> resStack = new Stack<>();
+		Stack<Node> stack = new Stack<>();
+		stack.push(root);
+
+		while (!stack.isEmpty()) {
+			Node current = stack.pop();
+			resStack.push(current.val); 
+			if (current.left != null) {
+				stack.push(current.left);
+			}
+			if (current.right != null) {
+				stack.push(current.right);
+			}
+		}
+		while (!resStack.isEmpty()) {
+			result.add(resStack.pop());
+		}
+		return result;
+	}
 
 	public static void postOrder(Node root) {
 		if (root != null) {
@@ -34,47 +58,54 @@ public class PostOrderTraversal {
 			}
 		}
 	}
-	
+
 	public static void postOrderWithoutRecursion_self(Node root) {
 		Node temp = root;
 		Stack<Node> stack = new Stack<>();
 		while (temp != null || !stack.isEmpty()) {
-			if(temp != null) {
+			if (temp != null) {
 				stack.push(temp);
 				temp = temp.left;
-			}
-			else {
+			} else {
 				Node temp2 = stack.peek().right;
-				if(temp2 == null) {
+				if (temp2 == null) {
 					temp2 = stack.pop();
 					System.out.print(temp2.val + ", ");
-					while(!stack.isEmpty() && temp2 == stack.peek().right) {
+					while (!stack.isEmpty() && temp2 == stack.peek().right) {
 						temp2 = stack.pop();
 						System.out.print(temp2.val + ", ");
 					}
-				}
-				else {
+				} else {
 					temp = temp2;
 				}
 			}
 		}
 	}
-	
+
 	public static void main(String[] args) {
-		Node root = new Node(1);
-		root.left = new Node(2);
-		root.right = new Node(3);
-		root.left.left = new Node(4);
-		root.left.right = new Node(5);
-		root.right.left = new Node(6);
-		root.right.right = new Node(7);
-		root.left.left.right = new Node(8);
-		root.left.left.right.left = new Node(9);
-		root.left.left.right.right = new Node(10);
-		root.left.left.right.right.right = new Node(11);
+		Node root = new Node(16);
+		root.left = new Node(12);
+		root.right = new Node(20);
+		
+		root.left.left = new Node(10);
+		root.left.right = new Node(14);
+		root.right.left = new Node(18);
+		root.right.right = new Node(22);
+		
+		root.left.left.left = new Node(7);
+		root.left.left.right = new Node(11);	
+		root.left.right.left = new Node(13);
+		root.left.right.right = new Node(15);
+		
+		root.right.left.left = new Node(17);
+		root.right.left.right = new Node(19);
+		root.right.right.left = new Node(21);
+		root.right.right.right = new Node(23);
 		postOrderWithoutRecursion(root);
 		System.out.println();
 		postOrderWithoutRecursion_self(root);
+		System.out.println("----------------");
+		System.out.println(postorderTraversal(root));
 	}
-	
+
 }

@@ -89,10 +89,11 @@ public class BalancedParenthesis {
 	public static void main(String[] args) {
 		String exp[] = { "((()))()", "((((A)))((((BBB()))))()()()())" };
 		for (String str : exp) {
-			System.out.println(isBalance(str) + " Max depth is " + findMaxDepth(str));
+	//		System.out.println(isBalance(str) + " Max depth is " + findMaxDepth(str));
 		}
 		
-		String s = "lee(t(c)o)de)";
+	//	String s = "lee(t(c)o)de)";
+		String s = "()())()";
 		System.out.println(minRemoveToMakeValid(s));
 	}
 }

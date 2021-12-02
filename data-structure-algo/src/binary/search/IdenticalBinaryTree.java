@@ -10,5 +10,7 @@ public class IdenticalBinaryTree {
 		else {
 			return (isEquals(root1.left, root2.left) && isEquals(root1.right, root2.right) && (root1.val == root2.val));
 		}
+		
+		
 	}
 }

@@ -9,10 +9,11 @@ public class Node {
 	public int getVal() {
 		return val;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Node [val=" + val + ", left=" + left + ", right=" + right + "]";
+		return "[ val :" + val + ", left :" + (left != null ? left.val + " " : "_") + ", right : "
+				+ (right != null ? right.val + " " : "_") + "] ";
 	}
 
 	public Node(int val) {

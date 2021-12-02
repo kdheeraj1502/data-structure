@@ -1,5 +1,7 @@
 package backtracking;
 
+import java.util.Arrays;
+
 public class QueensProblem {
 
 	private int chessBoard[][];
@@ -49,7 +51,7 @@ public class QueensProblem {
 			return true;
 		}
 
-		// check for row 0 to last for each column hence initialize with row 0
+		// check from row 0 up-to last row for every column in the row, hence initialize with row 0
 		for (int rowIndex = 0; rowIndex < numOfQueens; rowIndex++) {
 			if (isPlaceValid(rowIndex, colIndex)) {
 				chessBoard[rowIndex][colIndex] = 1;
@@ -58,6 +60,7 @@ public class QueensProblem {
 				if (nQueenProb(colIndex + 1)) {
 					return true;
 				}
+				// BACKTRACK
 				chessBoard[rowIndex][colIndex] = 0;
 			}
 		}
@@ -88,9 +91,15 @@ public class QueensProblem {
 	}
 
 	public static void main(String[] args) {
+		
+		char chessBoard[][] = new char[8][8];
+		 for(int i = 0; i < 8; i++){
+	            Arrays.fill(chessBoard[i], '.');
+	        }
+		
 		QueensProblem qp = new QueensProblem();
 		System.out.println(System.currentTimeMillis()/1000);
-		qp.solve(30);
+		qp.solve(8);
 		System.out.println(System.currentTimeMillis()/1000);
 	}
 }

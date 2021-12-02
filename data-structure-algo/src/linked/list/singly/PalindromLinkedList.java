@@ -22,6 +22,49 @@ public class PalindromLinkedList {
 	       return true;
 	   }
 	
+    public static boolean isPalindrome_1(ListNode head) {
+        if(head == null || head.next == null) return true;
+        ListNode curr = head;
+        ListNode temp = new ListNode();
+        ListNode dummy = temp;
+        while(curr.next != null){
+        	dummy.next = new ListNode(curr.val);
+        	dummy = dummy.next;
+            curr = curr.next;
+        }
+        dummy.next = new ListNode(curr.val);
+        temp = temp.next;
+        ListNode prev = reverse(head);
+        curr = temp;
+        while(curr != null && prev != null){
+            if(curr.val != prev.val){
+                return false;
+            }
+            System.out.print("curr " + curr.val + " prev " + prev.val);
+            curr = curr.next;
+            prev = prev.next;
+        }
+        System.out.println();
+        if(curr != null || prev != null) {
+            return false;
+        }
+        return true;
+    }
+    
+    private static ListNode reverse(ListNode head){
+        ListNode curr = head;
+        ListNode prev = null;
+        ListNode next = null;
+        
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
+	
 	public static void main(String[] args) {
 		ListNode node = new ListNode(1);
 		node.next = new ListNode(2);
@@ -30,6 +73,8 @@ public class PalindromLinkedList {
 		
 		PalindromLinkedList pll = new PalindromLinkedList();
 		System.out.println(pll.isPalindrome(node));
+		
+		System.out.println(isPalindrome_1(node));
 	}
 }
 

@@ -9,11 +9,13 @@ public class SudokoProblem {
 	}
 
 	private boolean feasibleSudoko(int rowIndex, int colIndex) {
+		// WHEN WE REACH LAST ROW
 		if (rowIndex == Constants.SUDOKO_BOARD_SIZE) {
 			return true;
 		}
 		int nextRowIndex = 0;
 		int nextColIndex = 0;
+		// WHEN WE REACH LAST COLUMN AND SHIFT TO NEXT ROW AND START COULMN FROM 0
 		if (colIndex == Constants.SUDOKO_BOARD_SIZE - 1) {
 			nextRowIndex = rowIndex + 1;
 			nextColIndex = 0;
@@ -83,11 +85,36 @@ public class SudokoProblem {
 	}
 
 	public static void main(String[] args) throws Exception {
-		int[][] sudokoTable = { { 3, 0, 6, 5, 0, 8, 4, 0, 0 }, { 5, 2, 0, 0, 0, 0, 0, 0, 0 },
-				{ 0, 8, 7, 0, 0, 0, 0, 3, 1 }, { 0, 0, 3, 0, 1, 0, 0, 8, 0 }, { 9, 0, 0, 8, 6, 3, 0, 0, 5 },
-				{ 0, 5, 0, 0, 9, 0, 6, 0, 0 }, { 1, 3, 0, 0, 0, 0, 2, 5, 0 }, { 0, 0, 0, 0, 0, 0, 0, 7, 4 },
+		int a = 9;
+		char c = (char) (a + '0');
+		System.out.println(c);
+		System.out.println("----------------");
+		int[][] sudokoTable = { 
+				{ 3, 0, 6, 5, 0, 8, 4, 0, 0 }, 
+				{ 5, 2, 0, 0, 0, 0, 0, 0, 0 },
+				{ 0, 8, 7, 0, 0, 0, 0, 3, 1 }, 
+				{ 0, 0, 3, 0, 1, 0, 0, 8, 0 }, 
+				{ 9, 0, 0, 8, 6, 3, 0, 0, 5 },
+				{ 0, 5, 0, 0, 9, 0, 6, 0, 0 }, 
+				{ 1, 3, 0, 0, 0, 0, 2, 5, 0 }, 
+				{ 0, 0, 0, 0, 0, 0, 0, 7, 4 },
 				{ 0, 0, 5, 2, 0, 6, 3, 0, 0 } };
-		SudokoProblem sp = new SudokoProblem(sudokoTable);
+
+		int[][] sudokoTable1 = { 
+				{ 5, 3, 0, 0, 7, 0, 0, 0, 0 }, 
+				{ 6, 0, 0, 1, 9, 5, 0, 0, 0 },
+				{ 0, 9, 8, 0, 0, 0, 0, 6, 0 }, 
+				{ 8, 0, 0, 0, 6, 0, 0, 0, 3 }, 
+				{ 4, 0, 0, 8, 0, 3, 0, 0, 1 },
+				{ 7, 0, 0, 0, 2, 0, 0, 0, 6 }, 
+				{ 0, 6, 0, 0, 0, 0, 2, 8, 0 }, 
+				{ 0, 0, 0, 4, 1, 9, 0, 0, 5 },
+				{ 0, 0, 0, 0, 8, 0, 0, 7, 9 } };
+
+		int[][] sudoko = { { 7, 7, 7, 7, 7, 7, 7, 7, 7 }, { 7, 7, 7, 7, 7, 7, 7, 7, 7 }, { 7, 7, 7, 7, 7, 7, 7, 7, 7 },
+				{ 7, 7, 7, 7, 7, 7, 7, 7, 7 }, { 7, 7, 7, 7, 7, 7, 7, 7, 7 }, { 7, 7, 7, 7, 7, 7, 7, 7, 7 },
+				{ 7, 7, 7, 7, 7, 7, 7, 7, 7 }, { 7, 7, 7, 7, 7, 7, 7, 7, 7 }, { 7, 7, 7, 7, 7, 7, 7, 7, 7 } };
+		SudokoProblem sp = new SudokoProblem(sudokoTable1);
 		sp.solve();
 	}
 }

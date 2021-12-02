@@ -4,8 +4,66 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 
+ * Find triplate
+ * 
+ * A + B = C
+ * 
+ * 1. SORT THE ARRAY
+ * 2. RUN FOR LOOP i STARTING FROM LAST INDEX 
+ * 3. TAKE VARIABLE START = 0;
+ * 4. TAKE VARIABLE END = i - 1;
+ * 5. ADD INNER WHILE LOOP WHERE START IS SMALLER THAN END
+ * 			USING BINARY SEARCH
+ * 6. ADD START VAL AND END VAL AND EQUAL WITH i VAL
+ * 
+ * 
+ * @author dheerajkumar02
+ *
+ */
 public class ABCTriplet {
-
+	
+	public static void findTriplet(int num[]) {
+		// 1. 
+		Arrays.sort(num);
+		for (int i = num.length - 1; i >= 0; i--) {
+	//	for(int i = 2; i < num.length; i++) {
+			int j = 0;
+			int k = i - 1;
+			int a = num[i];
+			//[-5, -4, 0, 1, 2, 3, 5, 7, 8, 12]
+			while (j < k) {
+				int b = num[j];
+				int c = num[k];
+				int sum = b + c;
+				if (num[i] == sum) {
+					System.out.println("numbers are " + num[i] + " = " + num[j] + " + " + num[k]);
+					j++;
+					k--;
+				//	return;
+				} else if (num[i] > sum)
+					j += 1;
+				else
+					k -= 1;
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+	//	int num[] = { 5, 32, 1, 7, 10, 50, 19, 21, 2 };
+		int num[] = { 2, 7, 3, 5, -5, 8, -4, 1, 0, 12 };
+		List<List<Integer>> result = new ArrayList<>();
+	//	System.out.println(abcTriplet(num, result));
+		System.out.println("-----Found triplet--------");
+		findTriplet(num);
+		//numberSumBook(num);
+		System.out.println("-----Found triplet self--------");
+		findTriplet_self(num);
+		System.out.println("-----Found triplet similar to self--------");
+		findTriplets(num, num.length);
+	}
+	
 	public static List<List<Integer>> abcTriplet(int num[], List<List<Integer>> output) {
 		Arrays.sort(num);
 		int start;
@@ -64,64 +122,24 @@ public class ABCTriplet {
 		}
 	}
 
-	public static void main(String[] args) {
-	//	int num[] = { 5, 32, 1, 7, 10, 50, 19, 21, 2 };
-		int num[] = { 2, 7, 3, 5, -5, 8, -4, 1, 0, 12 };
-		List<List<Integer>> result = new ArrayList<>();
-	//	System.out.println(abcTriplet(num, result));
-		System.out.println("-----Found triplet--------");
-		findTriplet(num);
-		//numberSumBook(num);
-		System.out.println("-----Found triplet self--------");
-		findTriplet_self(num);
-		System.out.println("-----Found triplet similar to self--------");
-		findTriplets(num, num.length);
-	}
-
-	public static void findTriplet(int num[]) {
-		Arrays.sort(num);
-		for (int i = num.length - 1; i >= 0; i--) {
-	//	for(int i = 2; i < num.length; i++) {
-			int j = 0;
-			int k = i - 1;
-			int a = num[i];
-			//[-5, -4, 0, 1, 2, 3, 5, 7, 8, 12]
-			while (j < k) {
-				int b = num[j];
-				int c = num[k];
-				int sum = b + c;
-				if (num[i] == sum) {
-					System.out.println("numbers are " + num[i] + " = " + num[j] + " + " + num[k]);
-					j++;
-					k--;
-				//	return;
-				} else if (num[i] > sum)
-					j += 1;
-				else
-					k -= 1;
-			}
-		}
-	}
-	
 	public static void findTriplet_self(int num[]) {
 		Arrays.sort(num);
 		// for (int i = n - 1; i >= 0; i--) {
-		for (int i = 0; i < num.length - 2; i++) {
-			int start = i + 1;
-			//int end = i - 1;
-			int end = num.length - 1;
-			int a = num[i];
+		for (int i = num.length - 1; i >= 0; i--) {
+			int start = 0;
+			int end = i - 1;
+			int c = num[i];
 			while (start < end) {
-				int b = num[start];
-				int c = num[end];
-				int sum = a + b + c;
-				if (sum == 0) {
+				int a = num[start];
+				int b = num[end];
+				int sum = a + b;
+				if (sum == c) {
 					// pair found
-					System.out.println("numbers are " + Math.abs(a) + " = " + b + " + " + c);
+					System.out.println("numbers are " + Math.abs(c) + " = " + a + " + " + b);
 					start++;
 					end--;
 					//return;
-				} else if (sum > 0)
+				} else if (sum > c)
 					end--;
 				else
 					start++;
@@ -129,7 +147,7 @@ public class ABCTriplet {
 		}
 
 		// no such triplet is found in array
-		System.out.println("No such triplet exists");
+		//System.out.println("No such triplet exists");
 	}
 	
 		public static void findTriplets(int arr[], int n)
