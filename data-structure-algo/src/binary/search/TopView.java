@@ -5,6 +5,21 @@ import java.util.*;
 public class TopView {
 	
 	static Node root;
+	
+	static class Pair<K, V>{
+	    Node node;
+	    int index;
+	    Pair(Node node, int index){
+	        this.node = node;
+	        this.index = index;
+	    }
+	    public Node getNode(){
+	        return this.node;
+	    }
+	    public int getIndex(){
+	        return this.index;
+	    }
+	}
 
 	static ArrayList<Integer> topView(Node root) {
 		ArrayList<Integer> result = new ArrayList<>();

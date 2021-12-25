@@ -3,7 +3,7 @@ package backtracking;
 import java.util.*;
 
 // Must
-public class RemoveInvalidParentheses {
+public class RemoveInvalidParentheses_1 {
 	
 	public List<String> removeInvalidParentheses(String s) {
 		List<String> ans = new ArrayList<>();
@@ -34,7 +34,7 @@ public class RemoveInvalidParentheses {
 	public static void main(String[] args) {
 		//String s = "()())()";
 		String s = "((((((";
-		RemoveInvalidParentheses rp = new RemoveInvalidParentheses();
+		RemoveInvalidParentheses_1 rp = new RemoveInvalidParentheses_1();
 		System.out.println(rp.removeInvalidParentheses(s));
 	}
 }

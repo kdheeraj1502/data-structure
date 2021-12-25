@@ -11,6 +11,8 @@ public class SudokoProblem {
 	private boolean feasibleSudoko(int rowIndex, int colIndex) {
 		// WHEN WE REACH LAST ROW
 		if (rowIndex == Constants.SUDOKO_BOARD_SIZE) {
+		//	System.out.println(" ------------Solution Count [ " + solutionCount++ + " ]-----------------------");
+		//	System.out.println("------------------------------------------------------------------------------");
 			return true;
 		}
 		int nextRowIndex = 0;
@@ -110,11 +112,22 @@ public class SudokoProblem {
 				{ 0, 6, 0, 0, 0, 0, 2, 8, 0 }, 
 				{ 0, 0, 0, 4, 1, 9, 0, 0, 5 },
 				{ 0, 0, 0, 0, 8, 0, 0, 7, 9 } };
+		
+		int[][] sudokoTable2 = { 
+				{ 0, 0, 1, 0, 8, 5, 0, 0, 4 }, 
+				{ 0, 7, 4, 0, 0, 3, 8, 0, 0 },
+				{ 0, 0, 0, 0, 4, 0, 0, 7, 0 }, 
+				{ 7, 9, 0, 0, 0, 1, 0, 2, 0 }, 
+				{ 0, 0, 3, 9, 0, 0, 5, 0, 7 },
+				{ 0, 1, 0, 0, 0, 2, 0, 0, 0 }, 
+				{ 0, 3, 0, 0, 2, 0, 0, 0, 5 }, 
+				{ 0, 0, 9, 0, 0, 0, 3, 0, 2 },
+				{ 0, 0, 0, 0, 0, 0, 0, 0, 0 } };
 
 		int[][] sudoko = { { 7, 7, 7, 7, 7, 7, 7, 7, 7 }, { 7, 7, 7, 7, 7, 7, 7, 7, 7 }, { 7, 7, 7, 7, 7, 7, 7, 7, 7 },
 				{ 7, 7, 7, 7, 7, 7, 7, 7, 7 }, { 7, 7, 7, 7, 7, 7, 7, 7, 7 }, { 7, 7, 7, 7, 7, 7, 7, 7, 7 },
 				{ 7, 7, 7, 7, 7, 7, 7, 7, 7 }, { 7, 7, 7, 7, 7, 7, 7, 7, 7 }, { 7, 7, 7, 7, 7, 7, 7, 7, 7 } };
-		SudokoProblem sp = new SudokoProblem(sudokoTable1);
+		SudokoProblem sp = new SudokoProblem(sudokoTable2);
 		sp.solve();
 	}
 }

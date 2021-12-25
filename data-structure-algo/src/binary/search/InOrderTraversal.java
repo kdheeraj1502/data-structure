@@ -27,22 +27,31 @@ public class InOrderTraversal {
 	}
 
 	public static void inOrder_self(Node root) {
-		Node temp;
 		Stack<Node> stack = new Stack<>();
-		stack.push(root);
-		while (!stack.isEmpty()) {
-			temp = stack.peek();
-			while (temp != null) {
+		Node temp = root;
+		while (!stack.isEmpty() || temp != null) {
+			if (temp != null) {
+				stack.push(temp);
 				temp = temp.left;
-				if(temp != null)
-					stack.push(temp);
+			} else {
+				temp = stack.pop();
+				System.out.print(temp.val + ", ");
+				temp = temp.right;
 			}
-			temp = stack.pop();
-			System.out.print(temp.val + ", ");
-			temp = stack.pop();
-			System.out.print(temp.val + ", ");
-			if (temp.right != null)
-				stack.push(temp.right);
 		}
+	}
+
+	public static void main(String[] args) {
+		Node root = new Node(11);
+
+		root.left = new Node(27);
+		root.right = new Node(30);
+
+		root.left.left = new Node(19);
+		root.left.right = new Node(15);
+
+		root.right.left = new Node(14);
+		root.right.right = new Node(23);
+		inOrder_self(root);
 	}
 }
