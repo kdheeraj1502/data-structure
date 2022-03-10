@@ -1,0 +1,6 @@
+package natwest.demo;
+
+public class Project {
+	String name;
+	
+}

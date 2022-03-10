@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="D:\project_workshop\Catalogue-service\Catalogue-service-code\spring-redis-example"/>
+			<item value="D:\personal project data_1\data-structure\450-DSA-Questions\Java"/>
+			<item value="D:\personal project data_1\Y3 Redmi\Activate switch\tutorials\persistence-modules\redis"/>
+			<item value="D:\personal project data_1\Y3 Redmi\Activate switch\tutorials-master\persistence-modules\redis"/>
+			<item value="D:\personal project data_1\Y3 Redmi\Activate switch\data-store-module_1"/>
+			<item value="D:\personal project data_1\data-structure\secure-spring-boot-microservice"/>
+			<item value="D:\personal project data_1\data-structure\data-structure\data-structure-algo"/>
+			<item value="D:\personal project data_1\data-structure\SpringSecurityDemo"/>
+			<item value="D:\personal project data_1\data-structure\WorkShop\web-mvc"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

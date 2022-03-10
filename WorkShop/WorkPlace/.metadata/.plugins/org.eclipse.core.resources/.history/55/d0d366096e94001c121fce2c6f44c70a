@@ -1,0 +1,8 @@
+package lowes;
+
+public class InfiniteLongArray {
+
+	public static void main(String[] args) {
+		
+	}
+}

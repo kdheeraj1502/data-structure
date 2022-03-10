@@ -1,0 +1,129 @@
+package morgan;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class MovieDurationBelow3 {
+
+	public static int findMinDuration(List<Float> duration) {
+		
+		return 0;
+	}
+
+	public static void main(String[] args) {
+		List<Float> duration = Arrays.asList(1.90f, 1.04f, 1.25f, 2.5f, 1.75f);
+		System.out.println(findMinDuration(duration));
+
+		int a[] = { 5, 2, 6, 8, 6, 7, 5, 2, 8 };
+		int n = a.length;
+
+		// n = removeduplicates(a, n);
+		n = removeduplicates1(a, n);
+
+		// Printing The array elements
+		for (int i = 0; i < n; i++)
+			System.out.print(a[i] + " ");
+
+		List<List<Integer>> marksByStudents = Arrays.asList(Arrays.asList(60, 70, 80), Arrays.asList(50, 70, 85),
+				Arrays.asList(65, 70, 75));
+		List<Double> result = marksByStudents.stream()
+				.map(l -> l.stream().collect(Collectors.averagingInt(num -> Integer.valueOf(num))))
+				.collect(Collectors.toList());
+		System.out.println(result);
+
+		String s = "energy";
+		String s1 = "enemy";
+
+		Map<Character, Integer> set = new HashMap<>();
+		
+		int letters[] = new int[26];
+	//	Arrays.fill(letters, -1);
+		
+		for (int i = 0; i < s.length(); i++) {
+			letters[s.charAt(i) - 'a']++;
+		}
+		
+		for (int i = 0; i < s1.length(); i++) {
+			letters[s1.charAt(i) - 'a']++;
+		}
+		
+		for(int i = 0; i < letters.length; i++) {
+			if(letters[i] == 1) {
+				System.out.print((char)('a' + i));
+			}
+		}
+		
+		System.out.println("-----------");
+		System.out.println(Arrays.toString(letters));
+		
+		
+		for (char c : s.toCharArray()) {
+			set.put(c, 1);
+		}
+		
+		for (char c : s1.toCharArray()) {
+			if(set.containsKey(c)) {
+				set.put(c, 2);
+			} else {
+				set.put(c, 1);
+			}
+		}
+		
+		List<Character> output = new ArrayList<>();
+		
+		for(Map.Entry<Character, Integer> entry : set.entrySet()) {
+			if(entry.getValue() == 1) {
+				output.add(entry.getKey());
+			}
+		}
+
+		System.out.println(output);
+	}
+
+	public static int removeduplicates(int a[], int n) {
+		if (n == 0 || n == 1) {
+			return n;
+		}
+		int[] temp = new int[n];
+		int j = 0;
+
+		for (int i = 0; i < n - 1; i++) {
+			if (a[i] != a[i + 1]) {
+				temp[j++] = a[i];
+			}
+		}
+
+		temp[j++] = a[n - 1];
+
+		// Changing the original array
+		for (int i = 0; i < j; i++) {
+			a[i] = temp[i];
+		}
+
+		return j;
+	}
+
+	public static int removeduplicates1(int a[], int n) {
+		// if(array size if 0 or 1 array is already sorted)
+		if (n == 0 || n == 1) {
+			return n;
+		}
+
+		int j = 0;
+
+		// check if the ith element is not equal to
+		// the (i+1)th element, then add that element
+		// at the jth index in the same array
+		// which indicates that te particular element
+		// will only be added once in the array
+		for (int i = 0; i < n - 1; i++) {
+			if (a[i] != a[i + 1]) {
+				a[j++] = a[i];
+			}
+		}
+
+		a[j++] = a[n - 1];
+
+		return j;
+	}
+}

@@ -1,0 +1,22 @@
+package natwest.demo;
+
+public class Employee {
+
+	String name;
+	Integer year;
+	Project project;
+	public Employee(String name, Integer year, Project project) {
+		super();
+		this.name = name;
+		this.year = year;
+		this.project = project;
+	}
+	
+	public static void main(String[] args) {
+		Employee employee = new Employee("", 2010, "Banking");
+	}
+	
+	public static void modify(Employee employee, Project project) {
+		
+	}
+}

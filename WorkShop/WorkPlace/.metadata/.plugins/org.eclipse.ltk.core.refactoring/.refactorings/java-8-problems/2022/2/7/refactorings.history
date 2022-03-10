@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;data-structure-algo/src/amazon.algo&apos;&#x0D;&#x0A;- Original project: &apos;java-8-problems&apos;&#x0D;&#x0A;- Destination element: &apos;data-structure-algo/src/amazon.algo&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     amazon.demo.FruitCart.java&#x0D;&#x0A;     amazon.demo.SearchSuggestion.java" description="Copy compilation units" destination="=data-structure-algo/src&lt;amazon.algo" element1="/src&lt;amazon.demo{FruitCart.java" element2="/src&lt;amazon.demo{SearchSuggestion.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1644336315945" units="2" version="1.0"/>
+</session>

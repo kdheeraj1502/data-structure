@@ -1,0 +1,23 @@
+package map;
+
+import java.util.*;
+
+public class MapOverridingOnlyEquals {
+
+	public static void main(String[] args) {
+		Map<Key, String> map = new HashMap<>();
+		
+	}
+}
+
+class Key {
+	
+	private String val;
+
+
+	@Override
+	public boolean equals(Object obj) {
+		return true;
+	}
+	
+}

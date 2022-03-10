@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ObserverPattern&apos; to &apos;design-pattern&apos;" description="Rename resource &apos;ObserverPattern&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/ObserverPattern" name="design-pattern" stamp="1641067323364" updateReferences="true"/>
+</session>

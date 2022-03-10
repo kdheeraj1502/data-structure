@@ -1,0 +1,82 @@
+
+P
+java:S1854n"5Remove this useless assignment to local variable "i".(¨Û•¨üÿÿÿÿ
+S
+java:S1854l"8Remove this useless assignment to local variable "copy".(ïØ£»ıÿÿÿÿ
+P
+java:S1854b":Remove this useless assignment to local variable "sorted".(·ì 
+N	java:S106"9Replace this use of System.out or System.err by a logger.(òó µ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Ù›÷—ùÿÿÿÿ
+N	java:S106 "9Replace this use of System.out or System.err by a logger.(Äˆ»²
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(üÜŠñüÿÿÿÿ
+N	java:S106#"9Replace this use of System.out or System.err by a logger.(œŠ˜²
+N	java:S106%"9Replace this use of System.out or System.err by a logger.(ôå²
+N	java:S106'"9Replace this use of System.out or System.err by a logger.(ÜÀ’œ
+S	java:S106("9Replace this use of System.out or System.err by a logger.(ÿåöìıÿÿÿÿ
+N	java:S106*"9Replace this use of System.out or System.err by a logger.(¼‘»£
+S	java:S106,"9Replace this use of System.out or System.err by a logger.(³ğ¸ûÿÿÿÿ
+N	java:S106."9Replace this use of System.out or System.err by a logger.(ŠØ«ò
+S	java:S1060"9Replace this use of System.out or System.err by a logger.(¾ùôŒùÿÿÿÿ
+S	java:S1062"9Replace this use of System.out or System.err by a logger.(Á¼Ã±úÿÿÿÿ
+<
+java:S21536"!Remove the boxing to "Character".(¿ óöúÿÿÿÿ
+P
+java:S1612:":Replace this lambda with method reference 'Entry::getKey'.(Åèï’
+N	java:S106<"9Replace this use of System.out or System.err by a logger.(¢àóÄ
+S	java:S106>"9Replace this use of System.out or System.err by a logger.(±è¯üÿÿÿÿ
+<
+java:S2153A"!Remove the boxing to "Character".(¿ óöúÿÿÿÿ
+P
+java:S1612E":Replace this lambda with method reference 'Entry::getKey'.(ºô¯Š
+M	java:S106G"9Replace this use of System.out or System.err by a logger.(Á®ìz
+S	java:S106I"9Replace this use of System.out or System.err by a logger.(šªÍ”ùÿÿÿÿ
+N	java:S106J"9Replace this use of System.out or System.err by a logger.(™±†á
+N	java:S106L"9Replace this use of System.out or System.err by a logger.(åÆ×¬
+S	java:S106M"9Replace this use of System.out or System.err by a logger.(ƒªû§şÿÿÿÿ
+N	java:S106O"9Replace this use of System.out or System.err by a logger.(Ôáã
+N	java:S106R"9Replace this use of System.out or System.err by a logger.(‚¨Ö§
+S	java:S106S"9Replace this use of System.out or System.err by a logger.(Å­Ëİúÿÿÿÿ
+N	java:S106T"9Replace this use of System.out or System.err by a logger.(ú«‹û
+N	java:S106^"9Replace this use of System.out or System.err by a logger.(ĞÛâï
+M	java:S106`"9Replace this use of System.out or System.err by a logger.(ƒÚáB
+O
+java:S1612c":Replace this lambda with method reference 'Entry::getKey'.(Í¥Åg
+Q
+java:S1612c"<Replace this lambda with method reference 'Entry::getValue'.(Í¥Åg
+A
+java:S1481b"+Remove this unused "sorted" local variable.(·ì 
+S	java:S106h"9Replace this use of System.out or System.err by a logger.(ÑæÅÿÿÿÿÿ
+V	java:S125f"<This block of commented-out lines of code should be removed.(’ª¿ßøÿÿÿÿ
+D
+java:S1481l")Remove this unused "copy" local variable.(ïØ£»ıÿÿÿÿ
+A
+java:S1481n"&Remove this unused "i" local variable.(¨Û•¨üÿÿÿÿ
+S	java:S106q"9Replace this use of System.out or System.err by a logger.(Î¨Œåúÿÿÿÿ
+Q	java:S125r"<This block of commented-out lines of code should be removed.(¥ËË¢
+S	java:S106v"9Replace this use of System.out or System.err by a logger.(Î¨Œåúÿÿÿÿ
+Q	java:S125w"<This block of commented-out lines of code should be removed.(¥ËË¢
+Q	java:S125z"<This block of commented-out lines of code should be removed.(‡ˆÖ‚
+N	java:S106|"9Replace this use of System.out or System.err by a logger.(Å°¡¯
+S	java:S106"9Replace this use of System.out or System.err by a logger.(›êŞÂúÿÿÿÿ
+Q
+java:S1612ƒ":Replace this lambda with method reference 'Entry::getKey'.(êÀŞ
+S
+java:S1612ƒ"<Replace this lambda with method reference 'Entry::getValue'.(êÀŞ
+O	java:S106…"9Replace this use of System.out or System.err by a logger.(àÓ¨¨
+Y
+java:S1128"CRemove this unused import 'java.util.concurrent.CompletableFuture'.(ôŞä´
+Y
+java:S1128">Remove this unused import 'java.util.function.BinaryOperator'.(º÷ùÿÿÿÿ
+N
+java:S1128"8Remove this unused import 'java.util.function.Supplier'.(†ïÿ‘
+X
+java:S1128	"=Remove this unused import 'java.util.function.UnaryOperator'.(¿óó›øÿÿÿÿ
+S
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(¢”•¤ıÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(´¢ğ÷
+R
+java:S36555"7Call "Optional#isPresent()" before accessing the value.(‹Äêâøÿÿÿÿ
+R
+java:S3655/"7Call "Optional#isPresent()" before accessing the value.(ûšŠ·úÿÿÿÿ
+R
+java:S3655@"7Call "Optional#isPresent()" before accessing the value.(‰“˜ùşÿÿÿÿ

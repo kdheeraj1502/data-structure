@@ -1,0 +1,14 @@
+package natwest.demo;
+
+public class Employee {
+
+	String name;
+	Integer year;
+	Project project;
+	public Employee(String name, Integer year, Project project) {
+		super();
+		this.name = name;
+		this.year = year;
+		this.project = project;
+	}
+}

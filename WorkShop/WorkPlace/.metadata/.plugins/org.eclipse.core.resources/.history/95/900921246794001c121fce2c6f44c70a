@@ -1,0 +1,17 @@
+package map;
+
+public class MapOverridingOnlyEquals {
+
+}
+
+class Key {
+	
+	private String val;
+
+
+	@Override
+	public boolean equals(Object obj) {
+		return true;
+	}
+	
+}

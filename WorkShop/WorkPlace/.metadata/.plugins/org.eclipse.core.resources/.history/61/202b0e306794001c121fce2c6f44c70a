@@ -1,0 +1,20 @@
+package map;
+
+public class MapOverridingOnlyEquals {
+
+	public static void main(String[] args) {
+		
+	}
+}
+
+class Key {
+	
+	private String val;
+
+
+	@Override
+	public boolean equals(Object obj) {
+		return true;
+	}
+	
+}

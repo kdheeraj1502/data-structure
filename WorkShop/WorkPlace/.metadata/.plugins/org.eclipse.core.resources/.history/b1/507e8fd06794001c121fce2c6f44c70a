@@ -1,0 +1,36 @@
+package map;
+
+import java.util.*;
+
+public class MapOverridingOnlyEquals {
+	
+	class Key {
+		
+		private String val;
+
+
+		@Override
+		public boolean equals(Object obj) {
+			return true;
+		}
+
+
+		@Override
+		public String toString() {
+			return "Key [val=" + val + "]";
+		}
+	}
+
+	public static void main(String[] args) {
+		MapOverridingOnlyEquals.Key key = new MapOverridingOnlyEquals.Key();
+		Map<Key, String> map = new HashMap<>();
+		map.put(new Key(), "One");
+		map.put(new Key(), "Two");
+		map.put(new Key(), "Three");
+		
+		System.out.println(map.size());
+		
+		System.out.println(map);
+	}
+}
+

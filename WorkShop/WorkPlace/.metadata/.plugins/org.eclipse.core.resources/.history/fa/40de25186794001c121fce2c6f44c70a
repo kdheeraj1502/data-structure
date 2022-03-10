@@ -1,0 +1,11 @@
+package map;
+
+public class MapOverridingOnlyEquals {
+
+}
+
+class Key {
+	
+	private String val;
+	
+}
