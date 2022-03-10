@@ -1,0 +1,11 @@
+
+public class EquateString {
+
+	public static void main(String[] args) {
+		String s1 = "curl -XGET --header 'Content-Type: application/json' http://localhost:9200/catalog_search_entities/_search -d '{\"from\":0,\"size\":10,\"query\":{\"bool\":{\"must\":[{\"multi_match\":{\"query\":\"chic\",\"fields\":[\"aliases.auto_suggest^1.0\",\"item_name.auto_suggest^1.0\"],\"type\":\"best_fields\",\"operator\":\"AND\",\"analyzer\":\"autocomplete_search\",\"slop\":0,\"prefix_length\":0,\"max_expansions\":50,\"zero_terms_query\":\"NONE\",\"auto_generate_synonyms_phrase_query\":true,\"fuzzy_transpositions\":true,\"boost\":1.0}},{\"match\":{\"status\":{\"query\":1,\"operator\":\"OR\",\"prefix_length\":0,\"max_expansions\":50,\"fuzzy_transpositions\":true,\"lenient\":false,\"zero_terms_query\":\"NONE\",\"auto_generate_synonyms_phrase_query\":true,\"boost\":1.0}}},{\"match\":{\"hub_id\":{\"query\":1,\"operator\":\"OR\",\"prefix_length\":0,\"max_expansions\":50,\"fuzzy_transpositions\":true,\"lenient\":false,\"zero_terms_query\":\"NONE\",\"auto_generate_synonyms_phrase_query\":true,\"boost\":1.0}}}],\"adjust_pure_negative\":true,\"boost\":1.0}}}'";
+		String s2 = "curl -XGET --header 'Content-Type: application/json' http://localhost:9200/catalog_search_entities/_search -d '{\"from\":0,\"size\":10,\"query\":{\"bool\":{\"must\":[{\"multi_match\":{\"query\":\"chic\",\"fields\":[\"aliases.auto_suggest^1.0\",\"item_name.auto_suggest^1.0\"],\"type\":\"best_fields\",\"operator\":\"AND\",\"analyzer\":\"autocomplete_search\",\"slop\":0,\"prefix_length\":0,\"max_expansions\":50,\"zero_terms_query\":\"NONE\",\"auto_generate_synonyms_phrase_query\":true,\"fuzzy_transpositions\":true,\"boost\":1.0}},{\"match\":{\"status\":{\"query\":1,\"operator\":\"OR\",\"prefix_length\":0,\"max_expansions\":50,\"fuzzy_transpositions\":true,\"lenient\":false,\"zero_terms_query\":\"NONE\",\"auto_generate_synonyms_phrase_query\":true,\"boost\":1.0}}},{\"match\":{\"hub_id\":{\"query\":1,\"operator\":\"OR\",\"prefix_length\":0,\"max_expansions\":50,\"fuzzy_transpositions\":true,\"lenient\":false,\"zero_terms_query\":\"NONE\",\"auto_generate_synonyms_phrase_query\":true,\"boost\":1.0}}}],\"adjust_pure_negative\":true,\"boost\":1.0}}}'";
+	
+		System.out.println(s1.equals(s2));
+	
+	}
+}

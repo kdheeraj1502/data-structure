@@ -37,10 +37,12 @@ public class GraphUndirectedByAdjacencyList {
     }
 
     public static void main(String[] args) {
-        GraphUndirectedByAdjacencyList graph = new GraphUndirectedByAdjacencyList(3);
+        GraphUndirectedByAdjacencyList graph = new GraphUndirectedByAdjacencyList(5);
         graph.addEdge(0, 1);
         graph.addEdge(1, 2);
-        graph.addEdge(2, 0);
+        graph.addEdge(1, 4);
+        graph.addEdge(2, 3);
+        graph.addEdge(3, 4);
         graph.printAdjacencyList();
     }
 }

@@ -20,6 +20,25 @@ public class BreadthFirstSearch {
 		}
 	}
 	
+    public ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
+        Queue<ArrayList<Integer>> queue = new LinkedList<>();
+        ArrayList<Integer> result = new ArrayList<>();
+        boolean vis[] = new boolean[adj.size()];
+        queue.add(adj.get(0));
+        result.add(0);
+        while(!queue.isEmpty()){
+            ArrayList<Integer> temp = queue.remove();
+            for(int v : temp){
+                if(!vis[v]){
+                    vis[v] = true;
+                    result.add(v);
+                    queue.add(adj.get(v));
+                }
+            }
+        }
+        return result;
+    }
+	
 	public static void main(String[] args) {
 		BreadthFirstSearch bfs = new BreadthFirstSearch();
 		

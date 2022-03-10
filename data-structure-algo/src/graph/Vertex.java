@@ -17,8 +17,10 @@ public class Vertex {
 	}
 
 	public void showNeighbors() {
+		System.out.print("Neighbor of " + name + " are ::");
 		for (Vertex v : adjacencyList)
-			System.out.println(v);
+			System.out.print(v + ", ");
+		System.out.println();
 	}
 
 	@Override

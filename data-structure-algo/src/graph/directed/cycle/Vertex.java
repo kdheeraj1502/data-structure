@@ -8,6 +8,14 @@ public class Vertex {
 	private boolean visited;
 	private boolean beingVisited;
 	private List<Vertex> adjacencyList;
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public Vertex(String name) {
 		this.name = name;

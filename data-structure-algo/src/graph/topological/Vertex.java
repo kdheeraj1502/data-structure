@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Vertex {
 
-	private String name;
+	public String name;
 	private boolean visited;
 	private List<Vertex> neigborList;
 	

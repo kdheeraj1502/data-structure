@@ -3,6 +3,8 @@ package binary.search;
 import java.util.*;
 import java.util.Map.Entry;
 
+import binary.search.BoundaryTraversal.Node;
+
 public class LongestPathSum {
 
 	public static int sumOfLongRootToLeafPath(TreeNode root) {
@@ -27,41 +29,37 @@ public class LongestPathSum {
 					queue.add(new SumLevel(temp.node.right, sum, level));
 				}
 			}
-		}
-		
+		}//{1=[1], 2=[3, 4], 3=[7, 8, 10, 11]}
+
 		int large = Integer.MIN_VALUE;
-		for(Map.Entry<Integer, List<Integer>> map : result.entrySet()) {
-			if(map.getKey() > large) {
+		for (Map.Entry<Integer, List<Integer>> map : result.entrySet()) {
+			if (map.getKey() > large) {
 				large = map.getKey();
 			}
 		}
 		List<Integer> largest = result.get(large);
-		for(int in : largest) {
-			if(max < in) {
+		for (int in : largest) {
+			if (max < in) {
 				max = in;
 			}
 		}
-		
+
 		return max;
 	}
 
 	public static void main(String[] args) {
-		TreeNode node = new TreeNode(1);
-		node.right = new TreeNode(7);
-		node.right.left = new TreeNode(6);
-		node.right.right = new TreeNode(10);
+		TreeNode root = new TreeNode(1);
 
-		node.right.left.left = new TreeNode(2);
+		root.left = new TreeNode(2);
+		root.right = new TreeNode(3);
 
-		node.right.right.left = new TreeNode(9);
-		node.right.left.left.right = new TreeNode(3);
+		root.left.left = new TreeNode(4);
+		root.left.right = new TreeNode(5);
 
-		node.right.right.left.left = new TreeNode(8);
+		root.right.left = new TreeNode(6);
+		root.right.right = new TreeNode(7);
 
-		node.right.left.left.right.right = new TreeNode(5);
-		node.right.left.left.right.right.left = new TreeNode(4);
-
-		System.out.println(sumOfLongRootToLeafPath(node));
+		System.out.println(sumOfLongRootToLeafPath(root));
 	}
 }
 

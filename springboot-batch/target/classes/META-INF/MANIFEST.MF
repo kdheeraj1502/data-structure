@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Built-By: dheerajkumar02
+Build-Jdk: 15.0.1
+Implementation-Title: SpringBatch
+Implementation-Version: 0.0.1
+Implementation-Vendor-Id: com.javainuse
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-URL: http://projects.spring.io/spring-boot/springboot-bat
+ ch/
+Created-By: Maven Integration for Eclipse
+

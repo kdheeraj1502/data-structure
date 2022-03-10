@@ -90,6 +90,8 @@ public class FruitCart {
 		List<String> shoppingCart = Arrays.asList( "banana", "apple", "orange", "apple", "apple", "banana");
 		int a = foo(codeList, shoppingCart);
 		System.out.println(a);
+		
+		
 
 //		orange
 //		apple

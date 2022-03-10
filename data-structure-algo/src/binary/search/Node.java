@@ -15,6 +15,8 @@ public class Node {
 		return "[ val :" + val + ", left :" + (left != null ? left.val + " " : "_") + ", right : "
 				+ (right != null ? right.val + " " : "_") + "] ";
 	}
+	
+	public Node(){}
 
 	public Node(int val) {
 		this.val = val;

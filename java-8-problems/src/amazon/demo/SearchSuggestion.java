@@ -36,6 +36,6 @@ public class SearchSuggestion {
 //		box
 //		cloths
 //		bags
-		searchSuggestions(res, str);
+		System.out.println(searchSuggestions(res, str));
 	}
 }

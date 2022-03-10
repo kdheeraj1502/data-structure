@@ -58,6 +58,24 @@ public class DepthFirstSearch {
 		}
 	}
 
+	static void dfs_self(List<Vertex> list) {
+		Map<String, Boolean> vis = new HashMap<>();
+		for(Vertex v : list) {
+			vis.put(v.getName(), false);
+		}
+		dfsUTIL(list.get(0), vis);
+	}
+
+	static void dfsUTIL(Vertex v, Map<String, Boolean> vis) {
+		vis.put(v.getName(), Boolean.TRUE);
+		System.out.print(v.getName() + " ");
+		for(Vertex neighbor : v.getNeighbors()) {
+			if(vis.get(neighbor.getName()) != null && !vis.get(neighbor.getName())) {
+				dfsUTIL(neighbor, vis);
+			}
+		}
+	}
+
 	public static void main(String[] args) {
 		Vertex v1 = new Vertex("A");
 		Vertex v2 = new Vertex("B");
@@ -72,7 +90,7 @@ public class DepthFirstSearch {
 		v1.addNeighbor(v2);
 		v1.addNeighbor(v6);
 		v1.addNeighbor(v7);
-	
+
 		v2.addNeighbor(v3);
 		v2.addNeighbor(v4);
 
@@ -89,8 +107,11 @@ public class DepthFirstSearch {
 		list.add(v8);
 
 		DepthFirstSearch dfs = new DepthFirstSearch();
-	//	dfs.dfs(list);
+		// dfs.dfs(list);
 		System.out.println("--------");
 		dfs.dfs_recursion(list);
+		System.out.println("--------------");
+		System.out.println();
+		dfs_self(list);
 	}
 }

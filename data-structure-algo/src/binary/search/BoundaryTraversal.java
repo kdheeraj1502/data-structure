@@ -76,33 +76,22 @@ public class BoundaryTraversal {
 //4 10 N 5 5 N 6 7 N 8 8 N 8 11 N 3 4 N 1 3 N 8 6 N 11 11 N 5 8
 	public static void main(String[] args) {
 
-		root = new Node(4);
+		root = new Node(1);
 
-		root.left = new Node(10);
+		root.left = new Node(2);
+		root.right = new Node(3);
 
-		root.left.left = new Node(5);
+		root.left.left = new Node(4);
 		root.left.right = new Node(5);
-
-		root.left.left.right = new Node(6);
-		root.left.right.left = new Node(7);
-
-		root.left.left.right.left = new Node(8);
-		root.left.left.right.right = new Node(8);
-		root.left.right.left.right = new Node(8);
-
-		root.left.left.right.left.left = new Node(11);
-		root.left.left.right.right.left = new Node(3);
-		root.left.left.right.right.right = new Node(4);
-		root.left.right.left.right.right = new Node(1);
-
-		root.left.left.right.left.left.left = new Node(3);
-		root.left.left.right.right.left.left = new Node(8);
-		root.left.left.right.right.left.right = new Node(6);
-		root.left.left.right.right.right.right = new Node(11);
-		root.left.right.left.right.right.left = new Node(11);
-
-		root.left.left.right.left.left.left.left = new Node(5);
-		root.left.left.right.left.left.left.right = new Node(8);
+		
+		root.right.left = new Node(6);
+		root.right.right = new Node(7);
+		
+		root.left.right.left = new Node(8);
+		
+		root.left.right.right = new Node(9);
+		
+		
 
 		System.out.println(boundary(root));
 	}

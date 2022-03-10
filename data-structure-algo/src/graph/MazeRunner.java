@@ -82,7 +82,13 @@ public class MazeRunner {
 	}
 
 	public static void main(String[] args) {
-		int num[][] = { { 1, 1, 1, 1, 1 }, { 1, 2, 0, 1, 1 }, { 1, 1, 0, 1, 1 }, { 1, 1, 0, 0, 0 }, { 1, 1, 1, 1, 3 } };
+		int num[][] = { 
+				{ 1, 1, 1, 1, 1 }, 
+				{ 1, 2, 0, 1, 1 }, 
+				{ 1, 1, 0, 1, 1 }, 
+				{ 1, 1, 0, 0, 0 }, 
+				{ 1, 1, 1, 1, 3 } 
+				};
 		MazeRunner mr = new MazeRunner(num);
 		mr.solve();
 
