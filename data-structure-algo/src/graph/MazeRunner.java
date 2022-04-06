@@ -72,6 +72,7 @@ public class MazeRunner {
 	private void showResult() {
 		int i = 0;
 		int j = 0;
+		System.out.println("----------------The Path is ----------------");
 		for (i = 0; i < visited.length; i++) {
 			for (j = 0; j < visited[i].length; j++) {
 				if (visited[i][j] == true) {

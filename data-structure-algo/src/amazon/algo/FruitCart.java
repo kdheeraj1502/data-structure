@@ -10,7 +10,6 @@ public class FruitCart {
 		boolean isFound = false;
 		String orderFruit = "";
 		String prevCodeFruit = "";
-
 		if (codeList.isEmpty()) {
 			return 1;
 		}
