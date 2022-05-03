@@ -45,14 +45,56 @@ public class ZigZagTraversal {
 		}
 		return result;
 	}
+	
+	static ArrayList<Integer> zigZagTraversalQueue(Node root) {
+		ArrayList<Integer> result = new ArrayList<>();
+		if (root == null)
+			return result;
+		if (root.left == null && root.right == null) {
+			result.add(root.val);
+			return result;
+		}
+		Queue<Node> queue = new LinkedList<>();
+		queue.add(root);
+		int even = 1;
+		while (!queue.isEmpty()) {
+			int size = queue.size();
+			while (size-- > 0) {
+				Node temp = queue.remove();
+				result.add(temp.val);
+				if (even % 2 == 0) {
+					if (temp.left != null) {
+						queue.add(temp.left);
+					}
+					if (temp.right != null) {
+						queue.add(temp.right);
+					}
+				} else {
+					if (temp.right != null) {
+						queue.add(temp.right);
+					}
+					if (temp.left != null) {
+						queue.add(temp.left);
+					}
+				}
+			}
+			even++;
+		}
+		return result;
+	}
 
 	public static void main(String[] args) {
-		root = new Node(3);
-		root.left = new Node(1);
-		root.right = new Node(4);
-		root.left.left = new Node(0);
-		root.left.right = new Node(2);
-		root.right.left = new Node(2);
+		root = new Node(7);
+		root.left = new Node(9);
+		root.right = new Node(7);
+		root.left.left = new Node(8);
+		root.left.right = new Node(8);
+		root.right.left = new Node(6);
+		root.left.left.left = new Node(10);
+		root.left.left.right = new Node(9);
+		System.out.println("-----Using Stck--------");
 		System.out.println(zigZagTraversal(root));
+		System.out.println("-----Using Queue--------");
+		System.out.println(zigZagTraversalQueue(root));
 	}
 }

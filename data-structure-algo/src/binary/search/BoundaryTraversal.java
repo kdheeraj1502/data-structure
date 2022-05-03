@@ -77,22 +77,67 @@ public class BoundaryTraversal {
 	public static void main(String[] args) {
 
 		root = new Node(1);
+		root.left = new Node(2); root.right = new Node(3);
 
-		root.left = new Node(2);
-		root.right = new Node(3);
-
-		root.left.left = new Node(4);
-		root.left.right = new Node(5);
-		
-		root.right.left = new Node(6);
-		root.right.right = new Node(7);
-		
-		root.left.right.left = new Node(8);
-		
-		root.left.right.right = new Node(9);
+		/*
+		 * 
+		 * 
+		 * root.left.left = new Node(4); root.left.right = new Node(5);
+		 * 
+		 * root.right.left = new Node(6); root.right.right = new Node(7);
+		 * 
+		 * root.left.right.left = new Node(8);
+		 * 
+		 * root.left.right.right = new Node(9);
+		 */
 		
 		
 
 		System.out.println(boundary(root));
+		
+		System.out.println(boundary_self(root));
+	}
+	
+	static ArrayList <Integer> boundary_self(Node node)
+	{
+	    ArrayList <Integer> result = new ArrayList<>();
+	    result.add(node.data);
+	    leftBoarder(node.left, result);
+	    leaf(node.left, result);
+	    leaf(node.right, result);
+	    rightBoarder(node.right, result);
+	    
+	    return result;
+	}
+	
+	static void leftBoarder(Node node, ArrayList <Integer> result){
+        if(node == null) return;
+        if(node.left != null){
+            result.add(node.data);
+            leftBoarder(node.left, result);
+        } else if(node.right != null){
+            result.add(node.data);
+            leftBoarder(node.right, result);
+        }
+	}
+	
+	static void leaf(Node node, ArrayList <Integer> result) {
+	    if(node == null) return;
+	    leaf(node.left, result);
+	    	if(node.left == null && node.right == null){
+		        result.add(node.data);
+		    }
+	    leaf(node.right, result);
+	}
+	
+	static void rightBoarder(Node node, ArrayList <Integer> result){
+        if(node == null) return;
+        if(node.right != null){
+            rightBoarder(node.right, result);
+            result.add(node.data);
+        } else if(node.left != null){
+            rightBoarder(node.left, result);
+            result.add(node.data);
+        }
 	}
 }

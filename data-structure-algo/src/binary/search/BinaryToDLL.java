@@ -48,23 +48,22 @@ public class BinaryToDLL {
 	}
 	
 	public static void main(String[] args) {
-		Node root = new Node(11);
+		Node root = new Node(10);
 	
-		root.left = new Node(27);
-		root.right = new Node(30);
+		root.left = new Node(12);
+		root.right = new Node(15);
 
-		root.left.left = new Node(19);
-		root.left.right = new Node(15);
+		root.left.left = new Node(25);
+		root.left.right = new Node(30);
 
-		root.right.left = new Node(14);
-		root.right.right = new Node(23);
+		root.right.left = new Node(36);
 		BinaryToDLL btd = new BinaryToDLL();
 	//	Node dll1 = btd.bToDLL(root);
 		
 	/*
 	 * while(dll1 != null) { System.out.print(dll1.val + ", "); dll1 = dll1.right; }
 	 */
-		Node dll2 = btd.bToDLL_Iteration(root);
+		Node dll2 = btd.bToDLL(root);
 		System.out.println();
 		System.out.println("-------------------------");
 		while(dll2 != null) {
