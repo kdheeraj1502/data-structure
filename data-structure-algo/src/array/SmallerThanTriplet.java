@@ -40,5 +40,19 @@ public class SmallerThanTriplet {
 			return r.stream().reduce(0, (a, b) -> a + b) + "_" + String.valueOf(count++);
 		}).collect(Collectors.toList());
 		output.stream().forEach(System.out::println);
+
+
+		System.out.println("-----------------------------------");
+
+		List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+
+// Using reduce to find the sum of all elements
+		int sum = numbers.stream().reduce(15, (acc, x) -> acc + x);
+
+		System.out.println("Sum: " + sum); // Output: Sum: 15
+
+
+
 	}
 }
